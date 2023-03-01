@@ -16,6 +16,16 @@ Hint3: The print statement is System.out.println();
 */
 public class Pyramid {
     public static void Output() {
-        
+        System.out.println("Start of Pyramid");
+        System.out.println("#");
+        System.out.println("##");
+        System.out.println("###");
+        System.out.println("####");
+        System.out.println("#####");
+        System.out.println("####");
+        System.out.println("###");
+        System.out.println("##");
+        System.out.println("#");
+        System.out.println("End of Pyramid");
     }
 }
