@@ -12,8 +12,19 @@ public class MathGames {
     // Hypotenuse and Perpendicular and return the base.
     // Example 1: pythagorean(3,4) would return 5
 
-
-
+    public static double PythagoreanTheorem(double a, double b, double c) {
+        if (a == 0) {
+            // a is missing
+            return Math.sqrt(Math.pow(c, 2) - Math.pow(b, 2));
+        } else if (b == 0) {
+            // b is missing
+            return Math.sqrt(Math.pow(c, 2) - Math.pow(a, 2));
+        } else {
+            // c is missing
+            return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        }
+    }
+    
     
     // 2. Create a method that will calcuate my grade in the class. You can use the grade range as follows
         // A: 100 - 90
@@ -28,9 +39,20 @@ public class MathGames {
         // Hint 3: You will probably need to use the Math.ceil() method
         // Example: grade(69.3) would return a D
 
-
-
-
+        public static String GradeCalculator(double grade) {
+            int roundedGrade = (int) Math.ceil(grade);
+            if (roundedGrade >= 90 && roundedGrade <= 100) {
+                return "A";
+            } else if (roundedGrade >= 80 && roundedGrade <= 89) {
+                return "B";
+            } else if (roundedGrade >= 70 && roundedGrade <= 79) {
+                return "C";
+            } else if (roundedGrade >= 60 && roundedGrade <= 69) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
 
 
     // 3. Create a method that will calculate the tip on a bill per person
@@ -42,12 +64,41 @@ public class MathGames {
     //      Hint 4: You will probably need to use the Math.ceil() method
     //      Example: tip(100, 4, 18) would return 5.0
 
+    public static double TipPerPersonCalculator(double totalBill, int numOfPeople, double tipPercentage) {
+        double tipAmount = totalBill * tipPercentage / 100;
+        double totalAmount = totalBill + tipAmount;
+        double amountPerPerson = totalAmount / numOfPeople;
+        return Math.ceil(amountPerPerson);
+    }
+    
     
  
 
 
     // You can either create a tester class or put your code here
-     public static void main(String[] args){
-        
+public static void main(String[] args){
+System.out.println("Homework 2: John Neil M. Dela Peña");
+System.out.println("==================================");
+System.out.println("Pythagorean Theorem:");
+double a = 3;
+double b = 4;
+double c = 0;
+double Hypotenus = PythagoreanTheorem(a, b, c);
+System.out.println("Hypotenus of the triangle with sides a = 3.0 & b = 4.0 is c = " + Hypotenus);
+System.out.println("==================================");
+System.out.println("==================================");
+System.out.println("Grade Calculator:");
+double grade = 69.3;
+String letterGrade = GradeCalculator(grade);
+System.out.println("Your grade is equivalent to " + letterGrade);
+System.out.println("==================================");
+System.out.println("==================================");
+System.out.println("Tip Calculator:");
+double TotalBill = 100.0;
+int NumOfPeople = 4;
+double TipPercentage = 18.0;
+double TipPerPerson = TipPerPersonCalculator(TotalBill, NumOfPeople, TipPercentage);
+System.out.println("Tip per person is " + TipPerPerson);
+System.out.println("==================================");
     }
 }
