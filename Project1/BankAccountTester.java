@@ -7,7 +7,7 @@ public class BankAccountTester {
         System.out.println(myAccount.name);
 
         BankAccount yourAccount = new BankAccount("Katara", 1234567, 10000, 101, "01/01/2000");
-
+        
         System.out.println(yourAccount.name);
 
         System.out.println(yourAccount.getbalance());
@@ -34,6 +34,7 @@ public class BankAccountTester {
 
         // yourAccount.deposit(100);
         System.out.println(yourAccount.getbalance());
+        
 
         // int choice = BankAccount.menu();
         // System.out.println(choice);
